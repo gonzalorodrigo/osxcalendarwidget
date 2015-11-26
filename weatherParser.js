@@ -148,6 +148,10 @@ function fetchWeatherData (callback, zip)
 	xml_request.setRequestHeader("Content-type", "text/xml");
 	xml_request.setRequestHeader("X-Client-ID", "IMSI=" + uid);
 	xml_request.setRequestHeader("Cache-Control", "no-cache");
+	xml_request.setRequestHeader("Accept-Encoding", "");
+	xml_request.setRequestHeader("Accept-Language", "");
+	xml_request.setRequestHeader("Connection", "");
+
 	xml_request.send(body);
 	
 	return xml_request;
@@ -314,7 +318,7 @@ function validateWeatherLocation (location, callback)
 	xml_request.open("POST", url);
 	xml_request.setRequestHeader("Content-type", "text/xml");
 	xml_request.setRequestHeader("X-Client-ID", "IMSI=" + uid);
-	xml_request.setRequestHeader("Cache-Control", "no-cache");		
+	xml_request.setRequestHeader("Cache-Control", "no-cache");
 	xml_request.send(body);
 
 	return xml_request;
